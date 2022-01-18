@@ -1,5 +1,7 @@
 pipeline {
-    agent master
+    agent {
+        label 'master'
+    }
 
     stages {
         stage("A") {
@@ -10,12 +12,6 @@ pipeline {
             steps {
                 echo "Started stage A"
                 sleep(time: 15, unit: "SECONDS")
-            }
-        }
-
-        stage("B") {
-            steps {
-                echo "Started stage B"
             }
         }
     }
